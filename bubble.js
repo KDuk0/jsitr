@@ -17,17 +17,20 @@ let scores = [60, 50, 60, 58, 54, 54,
      }
      return highScore;
    }
-   
-   let highScore = printAndGetHighScore(scores);
-   console.log("Bubbles test: " + scores.length);
-   console.log("Highest bubble score: " + highScore);
-
-   let bestSolutions = [];
-
-   for (let i = 0; i < scores.length; i ++) {
-    if (scores[i] == highScore) {
-        bestSolutions.push(i);
+  
+function getBestResults(scores, highScore) {
+    let bestSolutions = [];
+    for (let i = 0; i < scores.length; i++) {
+        if (scores[i] == highScore) {
+            bestSolutions.push(i);
+        }
     }
-   }
-   
+    return bestSolutions;
+}
+ 
+let highScore = printAndGetHighScore(scores);
+console.log("Bubbles tests: " + scores.length);
+console.log("Highest bubble score: " + highScore);
+
+let bestSolutions = getBestResults(scores, highScore);
 console.log("Solutions with the highest score: " + bestSolutions);
